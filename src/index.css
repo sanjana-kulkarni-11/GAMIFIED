@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-pixel {
+    font-family: 'Press Start 2P', monospace;
+  }
+  .font-silkscreen {
+    font-family: 'Silkscreen', monospace;
+  }
+  .font-vt323 {
+    font-family: 'VT323', monospace;
+  }
+  .image-pixelated {
+    image-rendering: pixelated;
+  }
+}
+
+/* Retro Pixel Background Grid */
+.bg-retro-grid {
+  background-color: #2b4ec9;
+  background-image: 
+    linear-gradient(to bottom, #1d4cd4 0%, #4b36b5 50%, #7d33b5 100%),
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 100% 100%, 36px 36px, 36px 36px;
+  background-blend-mode: normal, overlay, overlay;
+}
+
+/* Pixel Button shadows */
+.pixel-btn-shadow {
+  box-shadow: 0 5px 0 #111429, 0 6px 0 rgba(0, 0, 0, 0.4);
+}
+
+.pixel-btn-shadow:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #111429;
+}
+
+.pixel-card-shadow {
+  box-shadow: 0 6px 0 rgba(10, 15, 30, 0.6), 0 0 20px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes pixelFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-pixel-float {
+  animation: pixelFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes pixelTwinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.75);
+  }
+}
+
+.animate-pixel-twinkle {
+  animation: pixelTwinkle 2.2s steps(2, start) infinite;
+}
